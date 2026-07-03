@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Turni Personali</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#020617">
+<meta name="apple-mobile-web-app-title" content="Turni">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="icons/icon-512.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --c1:  #F59E0B; --c1bg:  #1C1508; --c1text:  #FCD34D;
+    --c2:  #38BDF8; --c2bg:  #051520; --c2text:  #7DD3FC;
+    --c3:  #A78BFA; --c3bg:  #0D0820; --c3text:  #C4B5FD;
+    --cR:  #34D399; --cRbg:  #031A0F; --cRtext:  #6EE7B7;
+    --cM:  #FB7185; --cMbg:  #1A0508; --cMtext:  #FCA5A5;
+    --cG:  #F97316; --cGbg:  #1A0A00; --cGtext:  #FDBA74;
+  }
+  * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
+  html, body { height: 100%; overscroll-behavior: none; }
+  body { background: #020617; color: #E2E8F0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 0; font-size: 17px; }
+
+  /* ── Desktop layout ── */
+  @media (min-width: 600px) {
+    body { background: #000D1A; }
+    #app-shell { max-width: 480px; margin: 0 auto; position: relative; min-height: 100vh; background: #020617; box-shadow: 0 0 60px rgba(0,0,0,0.8); }
+    #app-shell header { position: sticky; }
+    #bottom-sheet { max-width: 480px; left: 50%; transform: translateX(-50%) translateY(100%); }
+    #bottom-sheet.open { transform: translateX(-50%) translateY(0); }
+    #menu-dropdown { right: 12px; }
+  }
+
+  .shift-1 { background: var(--c1bg);  color: var(--c1text);  border: 1.5px solid var(--c1); }
+  .shift-2 { background: var(--c2bg);  color: var(--c2text);  border: 1.5px solid var(--c2); }
+  .shift-3 { background: var(--c3bg);  color: var(--c3text);  border: 1.5px solid var(--c3); }
+  .shift-R { background: var(--cRbg);  color: var(--cRtext);  border: 1.5px solid var(--cR); }
+  .shift-M { background: var(--cMbg);  color: var(--cMtext);  border: 1.5px solid var(--cM); }
+  .shift-G { background: var(--cGbg);  color: var(--cGtext);  border: 1.5px solid var(--cG); }
+
+  .stat-1 { background: var(--c1bg); border:1px solid var(--c1); color: var(--c1text); }
+  .stat-2 { background: var(--c2bg); border:1px solid var(--c2); color: var(--c2text); }
+  .stat-3 { background: var(--c3bg); border:1px solid var(--c3); color: var(--c3text); }
+  .stat-R { background: var(--cRbg); border:1px solid var(--cR); color: var(--cRtext); }
+  .stat-M { background: var(--cMbg); border:1px solid var(--cM); color: var(--cMtext); }
+  .stat-G { background: var(--cGbg); border:1px solid var(--cG); color: var(--cGtext); }
+
+  .day-cell {
+    aspect-ratio: 1; border-radius: 10px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; transition: transform 0.1s, box-shadow 0.1s;
+    border: 1.5px solid #1E293B; background: #0F172A;
+    user-select: none; -webkit-user-select: none;
+  }
+  .day-cell:active { transform: scale(0.93); }
+  .day-cell.today  { border-color: #60A5FA !important; box-shadow: 0 0 0 1px #1D4ED8; }
+  .day-cell.other-month { opacity: 0.22; pointer-events: none; }
+  .note-dot {
+    position: absolute; top: 3px; right: 4px;
+    font-size: 11px; line-height: 1; color: #FBBF24;
+  }
+
+  .btn-shift {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 14px 8px; border-radius: 14px; border: 2px solid transparent;
+    cursor: pointer; transition: transform 0.1s, filter 0.1s;
+    font-weight: 700; font-size: 22px; min-width: 58px; gap: 3px;
+  }
+  .btn-shift:active { transform: scale(0.92); filter: brightness(1.2); }
+  .btn-shift span   { font-size: 11px; font-weight: 500; opacity: 0.85; }
+
+  #bottom-sheet {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    transform: translateY(100%);
+    transition: transform 0.32s cubic-bezier(0.34,1.56,0.64,1);
+    background: #0F172A; border-top: 1px solid #1E293B;
+    border-radius: 24px 24px 0 0; padding: 12px 16px 32px;
+    max-width: 480px; margin: 0 auto;
+  }
+  #bottom-sheet.open { transform: translateY(0); }
+  #overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 40; display: none; backdrop-filter: blur(2px); }
+  #overlay.show { display: block; }
+
+  .modal-wrap { position: fixed; inset: 0; z-index: 60; display: none; align-items: flex-end; justify-content: center; }
+  .modal-wrap.show { display: flex; }
+  .modal-bg  { position: absolute; inset: 0; background: rgba(0,0,0,0.65); }
+  .modal-box {
+    position: relative; z-index: 1; width: 100%; max-width: 480px;
+    background: #0F172A; border-top: 1px solid #1E293B;
+    border-radius: 24px 24px 0 0; padding: 20px 20px 36px;
+    max-height: 92vh; overflow-y: auto;
+  }
+
+  /* menu 3 puntini */
+  #menu-dropdown {
+    position: absolute; top: 52px; right: 12px; z-index: 100;
+    background: #1E293B; border: 1px solid #334155; border-radius: 14px;
+    padding: 6px; min-width: 200px; display: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  }
+  #menu-dropdown.show { display: block; }
+  .menu-item {
+    display: flex; align-items: center; gap: 10px; padding: 11px 14px;
+    border-radius: 10px; cursor: pointer; font-size: 15px; color: #CBD5E1;
+    transition: background 0.15s;
+  }
+  .menu-item:hover { background: #334155; color: #fff; }
+
+  textarea {
+    background: #020617; border: 1px solid #334155; color: #E2E8F0;
+    border-radius: 10px; padding: 12px 14px; font-size: 16px; width: 100%;
+    outline: none; resize: none; font-family: inherit;
+  }
+  textarea:focus { border-color: #60A5FA; }
+  input[type="text"], input[type="number"] {
+    background: #020617; border: 1px solid #334155; color: #E2E8F0;
+    border-radius: 10px; padding: 12px 14px; font-size: 16px; width: 100%; outline: none;
+  }
+  input[type="text"]:focus, input[type="number"]:focus { border-color: #60A5FA; }
+  input[type="color"] { width: 44px; height: 44px; border-radius: 10px; border: none; cursor: pointer; padding: 2px; background: #0F172A; }
+
+  .tab-btn { transition: color 0.2s, border-color 0.2s; }
+  .tab-btn.active { color: #60A5FA; border-bottom: 2px solid #60A5FA; }
+
+  @keyframes slideIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .slide-in { animation: slideIn 0.25s ease; }
+
+  .color-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid #1E293B; }
+  .color-row:last-child { border-bottom: none; }
+  .color-swatch { width: 42px; height: 42px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; }
+
+  .guide-section { margin-bottom: 18px; }
+  .guide-section h3 { font-size: 15px; font-weight: 700; color: #60A5FA; margin-bottom: 6px; display: flex; align-items: center; gap-7px; }
+  .guide-section p, .guide-section li { font-size: 14px; color: #94A3B8; line-height: 1.6; }
+  .guide-section ul { padding-left: 18px; margin: 4px 0; }
+  .shift-pill { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 6px; font-weight: 800; font-size: 12px; vertical-align: middle; }
+</style>
+</head>
+<body class="min-h-screen">
+
+<!-- Header -->
+<div id="app-shell">
+<header class="sticky top-0 z-30 bg-slate-950/95 backdrop-blur border-b border-slate-800 px-4 py-3 flex items-center justify-between" style="position:relative;">
+  <div>
+    <h1 class="text-lg font-bold text-white leading-tight">Turni Personali</h1>
+    <p id="header-month" class="text-sm text-slate-400"></p>
+  </div>
+  <div class="flex gap-2 items-center">
+    <button onclick="openSettingsModal()" title="Colori turni" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+    </button>
+    <button onclick="openCycleModal()" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium px-3 py-2 rounded-xl transition-colors">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      Compila
+    </button>
+    <!-- 3 puntini -->
+    <button onclick="toggleMenu(event)" class="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+    </button>
+  </div>
+  <!-- Dropdown menu -->
+  <div id="menu-dropdown">
+    <div class="menu-item" onclick="doBackupExport()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Esporta Backup
+    </div>
+    <div class="menu-item" onclick="doBackupImport()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Importa Backup
+    </div>
+    <div style="height:1px;background:#334155;margin:4px 0;"></div>
+    <div class="menu-item" onclick="openGuideModal()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Guida
+    </div>
+    <div class="menu-item" onclick="openInfoModal()">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Info App
+    </div>
+  </div>
+</header>
+<!-- input file nascosto per import -->
+<input type="file" id="import-file-input" accept=".json" style="display:none" onchange="handleImportFile(event)">
+
+<!-- Tab bar -->
+<nav class="flex border-b border-slate-800 bg-slate-950 sticky top-[61px] z-20">
+  <button class="tab-btn active flex-1 py-3.5 text-base font-medium text-slate-400" onclick="switchTab('calendario',this)">Calendario</button>
+  <button class="tab-btn flex-1 py-3.5 text-base font-medium text-slate-400" onclick="switchTab('statistiche',this)">Statistiche</button>
+</nav>
+
+<!-- ══ TAB CALENDARIO ══ -->
+<div id="tab-calendario" class="slide-in">
+  <div class="flex items-center justify-between px-4 py-4">
+    <button onclick="changeMonth(-1)" class="w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 hover:bg-slate-700 transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <h2 id="month-label" class="text-xl font-bold text-white capitalize"></h2>
+    <button onclick="changeMonth(1)" class="w-11 h-11 flex items-center justify-center rounded-full bg-slate-800 hover:bg-slate-700 transition-colors">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+  </div>
+  <div class="px-4 mb-2">
+    <button onclick="confirmClearMonth()" class="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-red-950 border border-red-800 text-red-400 text-base font-medium hover:bg-red-900 transition-colors">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+      Cancella tutto il mese
+    </button>
+  </div>
+  <div class="grid grid-cols-7 px-3 mb-1">
+    <div class="text-center text-sm font-semibold text-red-400 py-1">Dom</div>
+    <div class="text-center text-sm font-semibold text-slate-400 py-1">Lun</div>
+    <div class="text-center text-sm font-semibold text-slate-400 py-1">Mar</div>
+    <div class="text-center text-sm font-semibold text-slate-400 py-1">Mer</div>
+    <div class="text-center text-sm font-semibold text-slate-400 py-1">Gio</div>
+    <div class="text-center text-sm font-semibold text-slate-400 py-1">Ven</div>
+    <div class="text-center text-sm font-semibold text-slate-400 py-1">Sab</div>
+  </div>
+  <div id="calendar-grid" class="grid grid-cols-7 gap-1.5 px-3 pb-3"></div>
+  <div class="px-4 py-3 flex flex-wrap gap-2 justify-center border-t border-slate-800" id="legend-bar"></div>
+</div>
+
+<!-- ══ TAB STATISTICHE ══ -->
+<div id="tab-statistiche" class="hidden slide-in px-4 py-5">
+  <h3 id="stats-title" class="text-base font-semibold text-slate-400 uppercase tracking-wider mb-4"></h3>
+  <div class="grid grid-cols-2 gap-3 mb-6" id="stats-grid"></div>
+  <h3 class="text-base font-semibold text-slate-400 uppercase tracking-wider mb-3">Dettaglio Giornaliero</h3>
+  <div id="stats-list" class="space-y-1.5 pb-8"></div>
+</div>
+
+<!-- ══ OVERLAY ══ -->
+<div id="overlay" onclick="closeSheet()"></div>
+
+<!-- ══ BOTTOM SHEET TURNO ══ -->
+<div id="bottom-sheet">
+  <div class="w-10 h-1 bg-slate-600 rounded-full mx-auto mb-3"></div>
+  <p id="sheet-title" class="text-center text-base text-slate-300 mb-3 font-semibold"></p>
+  <div class="flex justify-center gap-2 flex-wrap mb-4" id="sheet-btns"></div>
+  <!-- Sezione nota -->
+  <div class="border-t border-slate-700 pt-3">
+    <p class="text-slate-400 text-sm mb-2 flex items-center gap-1.5">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+      Nota per questo giorno
+    </p>
+    <textarea id="note-input" rows="2" placeholder="Aggiungi una nota…"></textarea>
+    <div class="flex gap-2 mt-2">
+      <button onclick="saveNote()" class="flex-1 py-2.5 bg-amber-600 hover:bg-amber-500 text-white font-semibold rounded-xl transition-colors text-sm">Salva nota</button>
+      <button onclick="deleteNote()" class="px-4 py-2.5 bg-slate-700 hover:bg-slate-600 text-slate-300 rounded-xl transition-colors text-sm">Elimina</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODAL CONFERMA CANCELLA MESE ══ -->
+<div id="confirm-modal" class="modal-wrap">
+  <div class="modal-bg" onclick="closeConfirmModal()"></div>
+  <div class="modal-box">
+    <div class="w-10 h-1 bg-slate-600 rounded-full mx-auto mb-5"></div>
+    <div class="text-center mb-6">
+      <div class="w-14 h-14 rounded-full bg-red-950 border border-red-800 flex items-center justify-center mx-auto mb-4">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FB7185" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+      </div>
+      <h2 class="text-white font-bold text-xl mb-2" id="confirm-title"></h2>
+      <p class="text-slate-400 text-base" id="confirm-msg"></p>
+    </div>
+    <div class="flex gap-3">
+      <button onclick="closeConfirmModal()" class="flex-1 py-3.5 bg-slate-700 hover:bg-slate-600 text-white font-medium rounded-xl transition-colors text-base">Annulla</button>
+      <button onclick="executeClearMonth()" class="flex-1 py-3.5 bg-red-700 hover:bg-red-600 text-white font-semibold rounded-xl transition-colors text-base">Cancella</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODAL COMPILAZIONE AUTOMATICA ══ -->
+<div id="cycle-modal" class="modal-wrap">
+  <div class="modal-bg" onclick="closeCycleModal()"></div>
+  <div class="modal-box">
+    <div class="w-10 h-1 bg-slate-600 rounded-full mx-auto mb-5"></div>
+    <h2 class="text-white font-bold text-xl mb-1">Compilazione Automatica</h2>
+    <p class="text-slate-400 text-base mb-4" id="cycle-detect-msg"></p>
+    <div class="bg-slate-800 rounded-xl p-4 mb-4">
+      <p class="text-slate-300 text-base font-medium mb-3">Parti dal giorno:</p>
+      <div class="flex items-center gap-3">
+        <input type="number" id="start-day-input" min="1" max="31" value="1" style="width:80px" class="text-center text-xl font-bold">
+        <span class="text-slate-400 text-sm flex-1" id="start-day-label"></span>
+      </div>
+    </div>
+    <div id="cycle-auto-section" class="mb-4">
+      <button id="btn-auto-fill" onclick="autoFillWithDetected()" class="w-full py-4 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-colors text-lg">Usa Sequenza Rilevata</button>
+    </div>
+    <div class="border-t border-slate-700 pt-4">
+      <p class="text-base text-slate-400 mb-2 font-medium">Oppure definisci un ciclo personalizzato:</p>
+      <p class="text-sm text-slate-500 mb-3">Codici separati da virgola (es: <span class="text-slate-300">1,1,2,2,3,3,R,R</span>)</p>
+      <input type="text" id="custom-cycle-input" placeholder="1,G,2,R,3,M…" class="mb-3">
+      <div class="flex gap-2">
+        <button onclick="previewCustomCycle()" class="flex-1 py-3 bg-slate-700 hover:bg-slate-600 text-white font-medium rounded-xl transition-colors text-base">Anteprima</button>
+        <button onclick="applyCustomCycle()" class="flex-1 py-3 bg-emerald-700 hover:bg-emerald-600 text-white font-medium rounded-xl transition-colors text-base">Applica</button>
+      </div>
+      <p id="cycle-preview" class="text-sm text-slate-400 mt-2 min-h-[20px]"></p>
+    </div>
+    <button onclick="closeCycleModal()" class="w-full mt-4 py-3 text-slate-500 text-base">Annulla</button>
+  </div>
+</div>
+
+<!-- ══ MODAL COLORI ══ -->
+<div id="settings-modal" class="modal-wrap">
+  <div class="modal-bg" onclick="closeSettingsModal()"></div>
+  <div class="modal-box">
+    <div class="w-10 h-1 bg-slate-600 rounded-full mx-auto mb-5"></div>
+    <h2 class="text-white font-bold text-xl mb-1">Colori dei Turni</h2>
+    <p class="text-slate-400 text-base mb-5">Tocca il colore per modificarlo.</p>
+    <div id="color-rows"></div>
+    <div class="flex gap-3 mt-5">
+      <button onclick="resetColors()" class="flex-1 py-3 bg-slate-700 hover:bg-slate-600 text-slate-300 font-medium rounded-xl transition-colors text-base">Ripristina</button>
+      <button onclick="closeSettingsModal()" class="flex-1 py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-colors text-base">Salva</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODAL GUIDA ══ -->
+<div id="guide-modal" class="modal-wrap">
+  <div class="modal-bg" onclick="closeGuideModal()"></div>
+  <div class="modal-box">
+    <div class="w-10 h-1 bg-slate-600 rounded-full mx-auto mb-5"></div>
+    <h2 class="text-white font-bold text-xl mb-4 flex items-center gap-2">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      Guida all'app
+    </h2>
+    <div class="guide-section">
+      <h3>📅 Turni disponibili</h3>
+      <ul>
+        <li><strong style="color:#FCD34D">1 – Mattina</strong>: 06:00 – 14:00</li>
+        <li><strong style="color:#7DD3FC">2 – Pomeriggio</strong>: 14:00 – 22:00</li>
+        <li><strong style="color:#C4B5FD">3 – Notte</strong>: 22:00 – 06:00</li>
+        <li><strong style="color:#FDBA74">G – Giornaliero</strong>: 08:00–12:00 / 13:00–17:00</li>
+        <li><strong style="color:#6EE7B7">R – Riposo</strong></li>
+        <li><strong style="color:#FCA5A5">M – Mutua/Malattia</strong></li>
+      </ul>
+    </div>
+    <div class="guide-section">
+      <h3>✏️ Inserire / modificare un turno</h3>
+      <p>Tocca un giorno del calendario per aprire il pannello di selezione. Scegli il codice turno oppure premi <em>Cancella</em> per rimuoverlo.</p>
+    </div>
+    <div class="guide-section">
+      <h3>📝 Note</h3>
+      <p>Nel pannello del giorno trovi il campo Note. Scrivi e premi <em>Salva nota</em>. Sul calendario comparirà un <strong style="color:#FBBF24">★</strong> sul giorno. Per eliminarla premi <em>Elimina</em>.</p>
+    </div>
+    <div class="guide-section">
+      <h3>🔄 Compilazione automatica</h3>
+      <p>Premi <em>Compila</em> in alto. L'app rileva il ciclo dai turni già inseriti e propone di continuarlo. Puoi scegliere il giorno di partenza e compilare solo i giorni vuoti. In alternativa digita un ciclo personalizzato (es. <span style="color:#E2E8F0">1,G,R,2,M</span>).</p>
+    </div>
+    <div class="guide-section">
+      <h3>🗑️ Cancella il mese</h3>
+      <p>Pulsante rosso sotto il navigatore: elimina tutti i turni (e le note) del mese corrente dopo conferma.</p>
+    </div>
+    <div class="guide-section">
+      <h3>🎨 Personalizza i colori</h3>
+      <p>Tocca l'icona palette in alto. Puoi cambiare bordo, sfondo e testo di ogni turno. Il pulsante <em>Ripristina</em> riporta ai colori originali.</p>
+    </div>
+    <div class="guide-section">
+      <h3>💾 Backup</h3>
+      <p><em>Esporta Backup</em>: scarica un file JSON con tutti i tuoi turni e note.<br><em>Importa Backup</em>: ripristina un backup precedente (sovrascrive i dati attuali).</p>
+    </div>
+    <div class="guide-section">
+      <h3>📊 Statistiche</h3>
+      <p>Il tab Statistiche mostra il conteggio di ogni tipo di turno nel mese visualizzato e il dettaglio giorno per giorno.</p>
+    </div>
+    <button onclick="closeGuideModal()" class="w-full mt-2 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-colors text-base">Chiudi</button>
+  </div>
+</div>
+
+<!-- ══ MODAL INFO ══ -->
+<div id="info-modal" class="modal-wrap">
+  <div class="modal-bg" onclick="closeInfoModal()"></div>
+  <div class="modal-box text-center">
+    <div class="w-10 h-1 bg-slate-600 rounded-full mx-auto mb-6"></div>
+    <div class="w-20 h-20 rounded-3xl bg-gradient-to-br from-blue-500 to-violet-600 flex items-center justify-center mx-auto mb-5 shadow-lg">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+    </div>
+    <h2 class="text-white font-bold text-2xl mb-1">Turni Personali</h2>
+    <p class="text-slate-400 text-sm mb-5">Versione 2.0</p>
+    <div class="bg-slate-800 rounded-2xl p-4 mb-5 text-left">
+      <p class="text-slate-300 text-sm leading-relaxed">
+        App personale per la gestione e pianificazione dei turni lavorativi.<br>
+        Dati salvati in locale sul dispositivo, nessuna connessione richiesta.
+      </p>
+    </div>
+    <div class="border-t border-slate-700 pt-4 mb-5">
+      <p class="text-slate-500 text-xs uppercase tracking-widest mb-1">Creata da</p>
+      <p class="text-white font-bold text-lg">Claude <span class="text-slate-400 font-normal">by</span> Miki</p>
+      <p class="text-slate-500 text-xs mt-1">Powered by Anthropic · Claude AI</p>
+    </div>
+    <div class="flex gap-2 items-center justify-center mb-5">
+      <span class="px-3 py-1 rounded-full bg-slate-700 text-slate-300 text-xs">Mobile-First</span>
+      <span class="px-3 py-1 rounded-full bg-slate-700 text-slate-300 text-xs">Offline</span>
+      <span class="px-3 py-1 rounded-full bg-slate-700 text-slate-300 text-xs">Dark Mode</span>
+    </div>
+    <button onclick="closeInfoModal()" class="w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-colors text-base">Chiudi</button>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════════
+let currentYear, currentMonth, selectedDate;
+const STORAGE_KEY = 'turni_v2';
+const NOTES_KEY   = 'turni_notes_v1';
+const COLORS_KEY  = 'turni_colors_v1';
+let shifts = {};
+let notes  = {};   // key: "YYYY-MM-DD" → stringa nota
+let shiftColors = {};
+
+const MONTHS = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+const SHIFT_CODES = ['1','2','3','G','R','M'];
+const SHIFT_NAMES = { '1':'Mattina','2':'Pomeriggio','3':'Notte','G':'Giornaliero','R':'Riposo','M':'Mutua' };
+const SHIFT_TIMES = { '1':'06:00–14:00','2':'14:00–22:00','3':'22:00–06:00','G':'08:00–12:00 / 13:00–17:00','R':'Riposo','M':'Mutua' };
+const SHIFT_ICONS = { '1':'☀','2':'🌤','3':'🌙','G':'💼','R':'💤','M':'🏥' };
+
+const DEFAULT_COLORS = {
+  '1': { border:'#F59E0B', bg:'#1C1508', text:'#FCD34D' },
+  '2': { border:'#38BDF8', bg:'#051520', text:'#7DD3FC' },
+  '3': { border:'#A78BFA', bg:'#0D0820', text:'#C4B5FD' },
+  'G': { border:'#F97316', bg:'#1A0A00', text:'#FDBA74' },
+  'R': { border:'#34D399', bg:'#031A0F', text:'#6EE7B7' },
+  'M': { border:'#FB7185', bg:'#1A0508', text:'#FCA5A5' },
+};
+
+// ══════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════
+function init() {
+  const now = new Date();
+  currentYear  = now.getFullYear();
+  currentMonth = now.getMonth();
+  loadData();
+  loadColors();
+  applyColors();
+  if (Object.keys(shifts).length === 0) seedExample();
+  renderCalendar();
+  document.addEventListener('click', e => {
+    const dd = document.getElementById('menu-dropdown');
+    if (!dd.contains(e.target) && !e.target.closest('[onclick="toggleMenu(event)"]')) dd.classList.remove('show');
+  });
+}
+
+function loadData() {
+  try { shifts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch { shifts = {}; }
+  try { notes  = JSON.parse(localStorage.getItem(NOTES_KEY)   || '{}'); } catch { notes  = {}; }
+}
+function saveData() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(shifts));
+  localStorage.setItem(NOTES_KEY,   JSON.stringify(notes));
+}
+function loadColors() {
+  try {
+    const s = JSON.parse(localStorage.getItem(COLORS_KEY) || 'null');
+    shiftColors = s ? s : JSON.parse(JSON.stringify(DEFAULT_COLORS));
+    // assicura G presente
+    if (!shiftColors['G']) shiftColors['G'] = JSON.parse(JSON.stringify(DEFAULT_COLORS['G']));
+  } catch { shiftColors = JSON.parse(JSON.stringify(DEFAULT_COLORS)); }
+}
+function saveColors() { localStorage.setItem(COLORS_KEY, JSON.stringify(shiftColors)); }
+
+function applyColors() {
+  const root = document.documentElement.style;
+  for (const code of SHIFT_CODES) {
+    const c = shiftColors[code];
+    if (!c) continue;
+    root.setProperty(`--c${code}`,    c.border);
+    root.setProperty(`--c${code}bg`,  c.bg);
+    root.setProperty(`--c${code}text`,c.text);
+  }
+  renderLegend();
+}
+
+function seedExample() {
+  const now = new Date();
+  const seq = ['1','1','G','G','2','2','3','3','R','R'];
+  for (let i = 0; i < 14; i++) {
+    const d = new Date(now.getFullYear(), now.getMonth(), i + 1);
+    shifts[dateKey(d)] = seq[i % seq.length];
+  }
+  saveData();
+}
+
+function dateKey(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+// ══════════════════════════════════════════════════════════════
+// LEGEND
+// ══════════════════════════════════════════════════════════════
+function renderLegend() {
+  const bar = document.getElementById('legend-bar');
+  if (!bar) return;
+  bar.innerHTML = '';
+  for (const code of SHIFT_CODES) {
+    const s = document.createElement('span');
+    s.className = 'flex items-center gap-1.5 text-sm';
+    s.innerHTML = `<span class="w-6 h-6 rounded-md shift-${code} flex items-center justify-center font-bold text-xs">${code}</span><span class="text-slate-400">${SHIFT_NAMES[code]}</span>`;
+    bar.appendChild(s);
+  }
+}
+
+// ══════════════════════════════════════════════════════════════
+// CALENDAR
+// ══════════════════════════════════════════════════════════════
+function renderCalendar() {
+  document.getElementById('month-label').textContent  = `${MONTHS[currentMonth]} ${currentYear}`;
+  document.getElementById('header-month').textContent = `${MONTHS[currentMonth]} ${currentYear}`;
+
+  const grid       = document.getElementById('calendar-grid');
+  grid.innerHTML   = '';
+  const todayKey   = dateKey(new Date());
+  const firstDay   = new Date(currentYear, currentMonth, 1).getDay();
+  const daysInMon  = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const daysInPrev = new Date(currentYear, currentMonth, 0).getDate();
+
+  const cells = [];
+  for (let i = firstDay - 1; i >= 0; i--)
+    cells.push({ day: daysInPrev - i, thisMonth: false, date: new Date(currentYear, currentMonth - 1, daysInPrev - i) });
+  for (let d = 1; d <= daysInMon; d++)
+    cells.push({ day: d, thisMonth: true,  date: new Date(currentYear, currentMonth, d) });
+  const rem = 42 - cells.length;
+  for (let d = 1; d <= rem; d++)
+    cells.push({ day: d, thisMonth: false, date: new Date(currentYear, currentMonth + 1, d) });
+
+  cells.forEach(cell => {
+    const key   = dateKey(cell.date);
+    const shift = shifts[key];
+    const hasNote = notes[key] && notes[key].trim() !== '';
+
+    const div = document.createElement('div');
+    div.className = 'day-cell' + (cell.thisMonth ? '' : ' other-month') + (key === todayKey ? ' today' : '');
+    if (shift) div.classList.add('shift-' + shift);
+
+    if (hasNote) {
+      const dot = document.createElement('span');
+      dot.className = 'note-dot';
+      dot.textContent = '★';
+      div.appendChild(dot);
+    }
+
+    const dayNum = document.createElement('span');
+    dayNum.className = 'text-base font-bold leading-tight';
+    dayNum.textContent = cell.day;
+
+    const badge = document.createElement('span');
+    if (shift) { badge.className = 'text-xs font-bold leading-tight mt-0.5'; badge.textContent = shift; }
+
+    div.appendChild(dayNum);
+    div.appendChild(badge);
+    if (cell.thisMonth) div.addEventListener('click', () => openSheet(cell.date));
+    grid.appendChild(div);
+  });
+
+  renderStats();
+}
+
+// ══════════════════════════════════════════════════════════════
+// BOTTOM SHEET
+// ══════════════════════════════════════════════════════════════
+function openSheet(date) {
+  selectedDate = date;
+  const dNames = ['Domenica','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato'];
+  const mNames = ['gen','feb','mar','apr','mag','giu','lug','ago','set','ott','nov','dic'];
+  document.getElementById('sheet-title').textContent =
+    `${dNames[date.getDay()]} ${date.getDate()} ${mNames[date.getMonth()]} ${date.getFullYear()}`;
+
+  // Bottoni turni
+  const btns = document.getElementById('sheet-btns');
+  btns.innerHTML = '';
+  for (const code of SHIFT_CODES) {
+    const b = document.createElement('button');
+    b.className = `btn-shift shift-${code}`;
+    b.innerHTML = `${code}<span>${SHIFT_NAMES[code].substring(0,7)}</span>`;
+    b.onclick = () => assignShift(code);
+    btns.appendChild(b);
+  }
+  const del = document.createElement('button');
+  del.className = 'btn-shift';
+  del.style.cssText = 'background:#111827;border-color:#374151;color:#9CA3AF;font-size:13px;';
+  del.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Cancella</span>`;
+  del.onclick = () => assignShift(null);
+  btns.appendChild(del);
+
+  // Nota esistente
+  const key = dateKey(date);
+  document.getElementById('note-input').value = notes[key] || '';
+
+  document.getElementById('bottom-sheet').classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+}
+
+function closeSheet() {
+  document.getElementById('bottom-sheet').classList.remove('open');
+  document.getElementById('overlay').classList.remove('show');
+  selectedDate = null;
+}
+
+function assignShift(code) {
+  if (!selectedDate) return;
+  const key = dateKey(selectedDate);
+  if (code === null) delete shifts[key]; else shifts[key] = code;
+  saveData();
+  closeSheet();
+  renderCalendar();
+}
+
+// ══════════════════════════════════════════════════════════════
+// NOTE
+// ══════════════════════════════════════════════════════════════
+function saveNote() {
+  if (!selectedDate) return;
+  const key  = dateKey(selectedDate);
+  const text = document.getElementById('note-input').value.trim();
+  if (text) notes[key] = text; else delete notes[key];
+  saveData();
+  closeSheet();
+  renderCalendar();
+}
+
+function deleteNote() {
+  if (!selectedDate) return;
+  const key = dateKey(selectedDate);
+  delete notes[key];
+  document.getElementById('note-input').value = '';
+  saveData();
+  closeSheet();
+  renderCalendar();
+}
+
+// ══════════════════════════════════════════════════════════════
+// CANCELLA MESE
+// ══════════════════════════════════════════════════════════════
+function confirmClearMonth() {
+  document.getElementById('confirm-title').textContent = `Cancella ${MONTHS[currentMonth]} ${currentYear}`;
+  document.getElementById('confirm-msg').textContent   = `Tutti i turni e le note di ${MONTHS[currentMonth]} verranno eliminati. L'operazione non è reversibile.`;
+  document.getElementById('confirm-modal').classList.add('show');
+}
+function closeConfirmModal() { document.getElementById('confirm-modal').classList.remove('show'); }
+function executeClearMonth() {
+  const daysInMon = new Date(currentYear, currentMonth + 1, 0).getDate();
+  for (let d = 1; d <= daysInMon; d++) {
+    const k = dateKey(new Date(currentYear, currentMonth, d));
+    delete shifts[k];
+    delete notes[k];
+  }
+  saveData();
+  closeConfirmModal();
+  renderCalendar();
+}
+
+// ══════════════════════════════════════════════════════════════
+// STATISTICHE
+// ══════════════════════════════════════════════════════════════
+function renderStats() {
+  document.getElementById('stats-title').textContent = `${MONTHS[currentMonth]} ${currentYear}`;
+  const daysInMon = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const counts = {};
+  SHIFT_CODES.forEach(c => counts[c] = 0);
+  const dayList = [];
+
+  for (let d = 1; d <= daysInMon; d++) {
+    const key = dateKey(new Date(currentYear, currentMonth, d));
+    const s   = shifts[key];
+    if (s) { counts[s]++; dayList.push({ d, s, key }); }
+  }
+
+  const grid = document.getElementById('stats-grid');
+  grid.innerHTML = '';
+  for (const code of SHIFT_CODES) {
+    const card = document.createElement('div');
+    card.className = `stat-${code} rounded-2xl p-4 flex flex-col`;
+    card.innerHTML = `<span class="text-2xl mb-1">${SHIFT_ICONS[code]}</span><span class="text-4xl font-bold">${counts[code]}</span><span class="text-sm opacity-80 mt-1">${SHIFT_NAMES[code]}</span>`;
+    grid.appendChild(card);
+  }
+  const total = Object.values(counts).reduce((a,b)=>a+b,0);
+  const tot   = document.createElement('div');
+  tot.className = 'col-span-2 bg-slate-800 border border-slate-700 rounded-2xl p-4 flex items-center justify-between';
+  tot.innerHTML = `<span class="text-slate-300 text-base font-medium">Giorni compilati</span><span class="text-white font-bold text-2xl">${total} / ${daysInMon}</span>`;
+  grid.appendChild(tot);
+
+  const list = document.getElementById('stats-list');
+  list.innerHTML = '';
+  if (!dayList.length) {
+    list.innerHTML = '<p class="text-slate-500 text-sm text-center py-6">Nessun turno inserito per questo mese.</p>';
+    return;
+  }
+  const dNames = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
+  dayList.forEach(({ d, s, key }) => {
+    const row  = document.createElement('div');
+    row.className = `flex items-center justify-between px-4 py-3.5 rounded-xl shift-${s}`;
+    const date = new Date(currentYear, currentMonth, d);
+    const star = notes[key] ? ' ★' : '';
+    row.innerHTML = `<span class="font-medium text-base">${dNames[date.getDay()]} ${d}${star}</span><span class="font-bold text-base">${s} – ${SHIFT_TIMES[s]}</span>`;
+    list.appendChild(row);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB / MESE
+// ══════════════════════════════════════════════════════════════
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-calendario').classList.toggle('hidden', tab !== 'calendario');
+  document.getElementById('tab-statistiche').classList.toggle('hidden', tab !== 'statistiche');
+}
+function changeMonth(delta) {
+  currentMonth += delta;
+  if (currentMonth > 11) { currentMonth = 0; currentYear++; }
+  if (currentMonth < 0)  { currentMonth = 11; currentYear--; }
+  renderCalendar();
+}
+
+// ══════════════════════════════════════════════════════════════
+// PATTERN DETECTION
+// ══════════════════════════════════════════════════════════════
+function detectPattern() {
+  const sorted = Object.keys(shifts).sort();
+  if (sorted.length < 4) return null;
+  const vals = sorted.map(k => shifts[k]);
+  for (let len = 2; len <= Math.min(8, Math.floor(vals.length / 2)); len++) {
+    const candidate = vals.slice(vals.length - len);
+    let match = true;
+    for (let i = vals.length - len - 1; i >= Math.max(0, vals.length - len * 2 - 1); i--) {
+      if (vals[i] !== candidate[(vals.length - len - 1 - i) % len]) { match = false; break; }
+    }
+    if (match) return candidate;
+  }
+  return null;
+}
+
+// ══════════════════════════════════════════════════════════════
+// COMPILAZIONE AUTOMATICA
+// ══════════════════════════════════════════════════════════════
+function openCycleModal() {
+  const detected = detectPattern();
+  const msg       = document.getElementById('cycle-detect-msg');
+  const autoSec   = document.getElementById('cycle-auto-section');
+  const btn       = document.getElementById('btn-auto-fill');
+
+  if (detected) {
+    msg.textContent       = `Sequenza rilevata: ${detected.join(' → ')} (ciclo di ${detected.length})`;
+    autoSec.style.display = '';
+    btn.dataset.cycle     = JSON.stringify(detected);
+  } else {
+    msg.textContent       = 'Nessun ciclo rilevabile. Definisci il tuo ciclo personalizzato.';
+    autoSec.style.display = 'none';
+  }
+
+  const daysInMon = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const inp = document.getElementById('start-day-input');
+  inp.max   = daysInMon;
+  inp.value = 1;
+  updateStartDayLabel();
+  inp.oninput = updateStartDayLabel;
+
+  document.getElementById('cycle-preview').textContent     = '';
+  document.getElementById('custom-cycle-input').value      = '';
+  document.getElementById('cycle-modal').classList.add('show');
+}
+function closeCycleModal() { document.getElementById('cycle-modal').classList.remove('show'); }
+
+function updateStartDayLabel() {
+  const inp = document.getElementById('start-day-input');
+  const day = parseInt(inp.value);
+  const dim = new Date(currentYear, currentMonth + 1, 0).getDate();
+  const dN  = ['Dom','Lun','Mar','Mer','Gio','Ven','Sab'];
+  document.getElementById('start-day-label').textContent =
+    (day >= 1 && day <= dim) ? `${dN[new Date(currentYear,currentMonth,day).getDay()]} ${day} – i giorni precedenti restano invariati` : '';
+}
+function getStartDay() {
+  const day = parseInt(document.getElementById('start-day-input').value);
+  const dim = new Date(currentYear, currentMonth + 1, 0).getDate();
+  return (day >= 1 && day <= dim) ? day : 1;
+}
+
+function autoFillWithDetected() {
+  const cycle = JSON.parse(document.getElementById('btn-auto-fill').dataset.cycle || '[]');
+  if (!cycle.length) return;
+  const startDay = getStartDay();
+  let offset = 0;
+  const allKeys   = Object.keys(shifts).sort();
+  const threshold = dateKey(new Date(currentYear, currentMonth, startDay));
+  const before    = allKeys.filter(k => k < threshold);
+  if (before.length) {
+    const idx = cycle.indexOf(shifts[before[before.length - 1]]);
+    offset = idx >= 0 ? (idx + 1) % cycle.length : 0;
+  }
+  fillMonthWithCycle(cycle, offset, startDay);
+  closeCycleModal();
+}
+
+function previewCustomCycle() {
+  const cycle   = parseCycleInput(document.getElementById('custom-cycle-input').value);
+  const preview = document.getElementById('cycle-preview');
+  if (!cycle) { preview.textContent = '⚠ Codici non validi. Usa: 1, 2, 3, G, R, M'; return; }
+  preview.textContent = `Ciclo: ${cycle.join(' → ')} (${cycle.length} giorni)`;
+}
+function applyCustomCycle() {
+  const cycle = parseCycleInput(document.getElementById('custom-cycle-input').value);
+  if (!cycle) { alert('Codici non validi. Usa solo: 1, 2, 3, G, R, M separati da virgola.'); return; }
+  fillMonthWithCycle(cycle, 0, getStartDay());
+  closeCycleModal();
+}
+function parseCycleInput(raw) {
+  const valid = SHIFT_CODES;
+  const parts = raw.toUpperCase().split(/[,\s]+/).map(s=>s.trim()).filter(Boolean);
+  if (!parts.length) return null;
+  for (const p of parts) if (!valid.includes(p)) return null;
+  return parts;
+}
+function fillMonthWithCycle(cycle, startOffset, fromDay = 1) {
+  const dim = new Date(currentYear, currentMonth + 1, 0).getDate();
+  let offset = startOffset;
+  for (let d = fromDay; d <= dim; d++) {
+    const key = dateKey(new Date(currentYear, currentMonth, d));
+    if (!shifts[key]) { shifts[key] = cycle[offset % cycle.length]; }
+    offset++;
+  }
+  saveData();
+  renderCalendar();
+}
+
+// ══════════════════════════════════════════════════════════════
+// COLORI
+// ══════════════════════════════════════════════════════════════
+function openSettingsModal() {
+  const container = document.getElementById('color-rows');
+  container.innerHTML = '';
+  for (const code of SHIFT_CODES) {
+    const c   = shiftColors[code];
+    const row = document.createElement('div');
+    row.className = 'color-row';
+    row.innerHTML = `
+      <div class="color-swatch shift-${code}">${code}</div>
+      <div class="flex-1">
+        <p class="text-white text-base font-semibold">${SHIFT_NAMES[code]}</p>
+        <p class="text-slate-500 text-xs">Bordo · Sfondo · Testo</p>
+      </div>
+      <div class="flex gap-2 items-center">
+        <div class="flex flex-col items-center gap-1">
+          <input type="color" id="col-border-${code}" value="${c.border}" onchange="liveUpdateColor('${code}')">
+          <span class="text-[9px] text-slate-500">Bordo</span>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <input type="color" id="col-bg-${code}" value="${c.bg}" onchange="liveUpdateColor('${code}')">
+          <span class="text-[9px] text-slate-500">Sfondo</span>
+        </div>
+        <div class="flex flex-col items-center gap-1">
+          <input type="color" id="col-text-${code}" value="${c.text}" onchange="liveUpdateColor('${code}')">
+          <span class="text-[9px] text-slate-500">Testo</span>
+        </div>
+      </div>`;
+    container.appendChild(row);
+  }
+  document.getElementById('settings-modal').classList.add('show');
+}
+function liveUpdateColor(code) {
+  shiftColors[code] = {
+    border: document.getElementById(`col-border-${code}`).value,
+    bg:     document.getElementById(`col-bg-${code}`).value,
+    text:   document.getElementById(`col-text-${code}`).value,
+  };
+  applyColors();
+  renderCalendar();
+}
+function resetColors() {
+  shiftColors = JSON.parse(JSON.stringify(DEFAULT_COLORS));
+  applyColors();
+  renderCalendar();
+  openSettingsModal();
+}
+function closeSettingsModal() {
+  saveColors();
+  document.getElementById('settings-modal').classList.remove('show');
+}
+
+// ══════════════════════════════════════════════════════════════
+// MENU 3 PUNTINI
+// ══════════════════════════════════════════════════════════════
+function toggleMenu(e) {
+  e.stopPropagation();
+  document.getElementById('menu-dropdown').classList.toggle('show');
+}
+
+// ══════════════════════════════════════════════════════════════
+// BACKUP EXPORT / IMPORT
+// ══════════════════════════════════════════════════════════════
+function doBackupExport() {
+  document.getElementById('menu-dropdown').classList.remove('show');
+  const payload = {
+    version: 2,
+    exported: new Date().toISOString(),
+    shifts,
+    notes,
+    colors: shiftColors,
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  const date = new Date().toISOString().slice(0,10);
+  a.href     = url;
+  a.download = `turni_backup_${date}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function doBackupImport() {
+  document.getElementById('menu-dropdown').classList.remove('show');
+  document.getElementById('import-file-input').click();
+}
+
+function handleImportFile(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const data = JSON.parse(ev.target.result);
+      if (!data.shifts) throw new Error('File non valido');
+      if (!confirm(`Importare il backup del ${data.exported ? data.exported.slice(0,10) : '?'}?\nI dati attuali verranno sovrascritti.`)) return;
+      shifts = data.shifts || {};
+      notes  = data.notes  || {};
+      if (data.colors) {
+        shiftColors = data.colors;
+        // assicura G
+        if (!shiftColors['G']) shiftColors['G'] = JSON.parse(JSON.stringify(DEFAULT_COLORS['G']));
+        saveColors();
+        applyColors();
+      }
+      saveData();
+      renderCalendar();
+      alert('✅ Backup importato con successo!');
+    } catch (err) {
+      alert('❌ File non valido o corrotto:\n' + err.message);
+    }
+    e.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+// ══════════════════════════════════════════════════════════════
+// GUIDA / INFO
+// ══════════════════════════════════════════════════════════════
+function openGuideModal()  { document.getElementById('menu-dropdown').classList.remove('show'); document.getElementById('guide-modal').classList.add('show'); }
+function closeGuideModal() { document.getElementById('guide-modal').classList.remove('show'); }
+function openInfoModal()   { document.getElementById('menu-dropdown').classList.remove('show'); document.getElementById('info-modal').classList.add('show'); }
+function closeInfoModal()  { document.getElementById('info-modal').classList.remove('show'); }
+
+// ══════════════════════════════════════════════════════════════
+// START
+// ══════════════════════════════════════════════════════════════
+init();
+
+// SERVICE WORKER
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(reg => console.log('SW registrato:', reg.scope))
+      .catch(err => console.warn('SW errore:', err));
+  });
+}
+</script>
+</div><!-- #app-shell -->
+</body>
+</html>
